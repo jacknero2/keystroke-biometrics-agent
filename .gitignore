@@ -1,0 +1,16 @@
+# Local virtualenv, build artifacts, caches -- not part of the shared code
+.venv/
+__pycache__/
+*.pyc
+build/
+dist/
+.DS_Store
+
+# Personal runtime data should never live here (it's designed to live in
+# the OS's app-data dir instead -- see config.py), but excluded here too
+# as a defensive backstop.
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+config.json
+sync_config.json

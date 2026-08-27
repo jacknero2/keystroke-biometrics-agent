@@ -1,0 +1,4 @@
+pynput>=1.7,<2
+rumps>=0.4,<1 ; sys_platform == "darwin"
+pystray>=0.19,<1 ; sys_platform == "win32"
+Pillow>=10,<12 ; sys_platform == "win32"
