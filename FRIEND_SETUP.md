@@ -31,23 +31,30 @@ set. If it says "command not found," install Python from
 [python.org/downloads](https://www.python.org/downloads/) first, then
 come back and re-run the check.
 
-## 2. Read the consent doc
+## 2. Get the code and read the consent doc
 
-Open `CONSENT.md` in the folder you were sent (double-click it, or
-`open CONSENT.md` in Terminal from that folder). Don't move on until
-you've read it.
+In Terminal, run these one at a time — paste each line as a whole line,
+don't let your terminal split it across lines (if a command visibly
+wraps or you see a `>` prompt on its own line after pasting, something
+got cut off — retype it instead of continuing):
+
+```bash
+git clone https://github.com/jacknero2/keystroke-biometrics-agent.git
+```
+```bash
+cd keystroke-biometrics-agent
+```
+```bash
+open CONSENT.md
+```
+
+Read `CONSENT.md` fully before continuing to step 3.
 
 ## 3. Run the installer
 
-In Terminal, `cd` into the `agent` folder you were given, then run these
-one at a time — paste each line as a whole line, don't let your terminal
-split it across lines (if a command visibly wraps or you see a `>`
-prompt on its own line after pasting, something got cut off — retype it
-instead of continuing):
+Executable permissions are already set from the repo, but this is
+harmless to run again just in case:
 
-```bash
-cd path/to/agent
-```
 ```bash
 chmod +x install_macos.sh uninstall_macos.sh setup_sync_macos.sh uninstall_sync_macos.sh
 ```
@@ -75,7 +82,7 @@ toggle it on when asked.
 path first —
 
 ```bash
-cd path/to/agent && source .venv/bin/activate && python -c "import sys, os; print(os.path.realpath(sys.executable))"
+cd ~/keystroke-biometrics-agent && source .venv/bin/activate && python -c "import sys, os; print(os.path.realpath(sys.executable))"
 ```
 
 Then in **System Settings → Privacy & Security → Accessibility** (and
@@ -96,7 +103,7 @@ correctly configured.
 ## 6. Confirm it's actually working
 
 ```bash
-cd path/to/agent && source .venv/bin/activate && python inspect_data.py --summary
+cd ~/keystroke-biometrics-agent && source .venv/bin/activate && python inspect_data.py --summary
 ```
 
 You should see real category counts (`alnum`, `correction`, `modifier`,
